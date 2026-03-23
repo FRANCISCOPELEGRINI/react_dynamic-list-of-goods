@@ -12,15 +12,24 @@ export const App: React.FC = () => {
   const [goodsList, setgoodsList] = useState<Good[]>([]);
 
   const loadAllgoodsList = () => {
-    goodsAPI.getAll().then(data => setgoodsList(data));
+    goodsAPI
+      .getAll()
+      .catch()
+      .then(data => setgoodsList(data));
   };
 
   const loadFiveFirtsgoodsList = () => {
-    goodsAPI.get5First().then(data => setgoodsList(data.sort()));
+    goodsAPI
+      .get5First()
+      .catch()
+      .then(data => setgoodsList(data));
   };
 
   const loadRedgoodsList = () => {
-    goodsAPI.getRedGoods().then(data => setgoodsList(data));
+    goodsAPI
+      .getRedGoods()
+      .catch()
+      .then(data => setgoodsList(data));
   };
 
   return (
